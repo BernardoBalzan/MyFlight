@@ -21,4 +21,8 @@ public class CiaAerea {
 	public String toString() {
 		return String.format("(%s) - %s ",codigo, nome);
 	}
+
+    public int compareTo(CiaAerea cia) {
+        return 0;
+    }
 }

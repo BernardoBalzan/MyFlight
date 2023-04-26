@@ -35,6 +35,7 @@ public class App {
 		gerAeronaves.adicionar(av5);
 		gerAeronaves.adicionar(av6);
 		gerAeronaves.adicionar(av7);
+		gerAeronaves.ordenaDescricao();
 		//System.out.println(gerAeronaves.listarTodas());
 		//System.out.println(gerAeronaves.buscarPorCodigo("764"));
 
@@ -66,6 +67,7 @@ public class App {
 		gerAeroportos.adicionar(a4);
 		gerAeroportos.adicionar(a5);
 		gerAeroportos.adicionar(a6);
+		gerAeroportos.ordenaNome();
 		//System.out.println(gerAeroportos.listarTodos());
 		//System.out.println(gerAeroportos.buscaPorCodigo("LIS"));
 
@@ -82,6 +84,7 @@ public class App {
 		gerRotas.adicionar(r4);
 		gerRotas.adicionar(r5);
 		gerRotas.adicionar(r6);
+		gerRotas.ordenaCias();
 		//System.out.println(gerRotas.listarTodas());
 		//System.out.println(gerRotas.buscarPorOrigem(a2));
 
@@ -95,6 +98,18 @@ public class App {
 		gerVoos.adicionar(v3);
 		//v1.setStatus(Status.ATRASADO);
 		//v3.setStatus(Status.CANCELADO);
+
+		//System.out.printf("Distancia: %.4f", Geo.distancia(a1.getLocal(), a2.getLocal()));
+		//av1.contar();
+		//r1.contar();
+		//a1.contar();
+
+
+
+
+
+
+
 
 
 	}
