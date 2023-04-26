@@ -9,13 +9,28 @@ public class Geo {
 		this.longitude = longitude;
 	}
 
-	public static double distancia(Geo geo, Geo geo2) {
-		double distancia;
-		distancia = (2*6371) * (Math.asin(Math.sqrt(Math.pow(Math.sin((Math.toRadians(geo.getLatitude()) - Math.toRadians(geo2.getLatitude())) / 2), 2)) +
-										(Math.pow(Math.sin((Math.toRadians(geo.getLongitude()) - Math.toRadians(geo.getLongitude())) / 2), 2)) * 
-										Math.cos(Math.toRadians(geo.getLatitude())) * Math.cos(Math.toRadians(geo2.getLatitude()))) );
-		return distancia;
-	}
+	public double distancia(Geo outra) {
+        Geo obj = new Geo(getLatitude(), getLongitude());
+        return distancia(obj, outra);
+        //return distancia(this, outra);
+    }
+	public static double distancia(Geo geo1, Geo geo2) {
+        double lat1 = Math.toRadians(geo1.getLatitude());
+        double lat2 = Math.toRadians(geo2.getLatitude());
+        double lon1 = Math.toRadians(geo1.getLongitude());
+        double lon2 = Math.toRadians(geo2.getLongitude());
+        
+        double diflat = (lat1-lat2)/2;
+        double diflon = (lon1-lon2)/2;
+        
+        double d = Math.pow(Math.sin(diflat),2)+
+                   Math.pow(Math.sin(diflon),2)*
+                   Math.cos(lat1) * Math.cos(lat2);
+        
+        d = 2 * 6371 * Math.asin(Math.sqrt(d));
+                
+        return d;   
+    }
 
 	public double getLatitude() {
 		return latitude;
