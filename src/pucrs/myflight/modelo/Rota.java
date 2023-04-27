@@ -33,7 +33,7 @@ public class Rota implements Contavel, Comparable<Rota> {
 
 	@Override
 	public String toString() {
-		return String.format("%s da %s com rota de %s ate %s",aeronave, cia, origem, destino);
+		return String.format("%s da %s com rota de %s ate %s \n",aeronave, cia, origem, destino);
 	}
 
 	public void contar() {

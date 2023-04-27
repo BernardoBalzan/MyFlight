@@ -27,7 +27,7 @@ public class Aeronave implements Contavel, Comparable<Aeronave> {
 
 	@Override
 	public String toString() {
-		return String.format("(%s) Aeronave: %s, Capacidade: %d",codigo, descricao, capacidade);
+		return String.format("(%s) Aeronave: %s, Capacidade: %d \n",codigo, descricao, capacidade);
 	}
 
 	public void contar() {

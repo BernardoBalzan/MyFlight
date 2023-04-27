@@ -42,6 +42,6 @@ public class Geo {
 
 	@Override
 	public String toString() {
-		return String.format("Latitude: %.4f ; Longitude: %.4f",latitude, longitude);
+		return String.format("Lat: %.4f ; Long: %.4f",latitude, longitude);
 	}
 }

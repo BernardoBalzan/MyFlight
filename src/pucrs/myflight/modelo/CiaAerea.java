@@ -19,7 +19,7 @@ public class CiaAerea {
 
 	@Override
 	public String toString() {
-		return String.format("(%s) - %s ",codigo, nome);
+		return String.format("(%s) - %s \n",codigo, nome);
 	}
 
     public int compareTo(CiaAerea cia) {
