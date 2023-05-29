@@ -37,7 +37,7 @@ public class GerenciadorVoos {
         voosData = new ArrayList<>();
 
         for (Voo voo : voos) {
-            if (voo.getDatahora().equals(data))
+            if (voo.getDataHora().equals(data))
                 voosData.add(voo);
         }
         if (voosData.size() != 0) {
