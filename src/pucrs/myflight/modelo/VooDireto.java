@@ -19,8 +19,11 @@ public class VooDireto extends Voo {
     }
 
     @Override
-    public Duration getDuracao() {
-        return duracao;
+    public String getDuracao() {
+        double duracaoHoras = 0;
+        duracaoHoras = rota.getDestino().getLocal().distancia(rota.getOrigem().getLocal());
+        duracao = Duration.ofHours((long)(duracaoHoras));
+        return String.format("Duracao da viagem aproximada: %02d:%02d:%02d%n", duracao.toHours(), duracao.toMinutesPart(), duracao.toSecondsPart());
     }
     
 }

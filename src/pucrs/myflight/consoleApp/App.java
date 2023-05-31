@@ -11,6 +11,7 @@ import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
 import pucrs.myflight.modelo.Rota;
 import pucrs.myflight.modelo.Voo;
+import pucrs.myflight.modelo.VooEscalas;
 
 import java.time.LocalDateTime;
 import java.time.Duration;
@@ -89,15 +90,23 @@ public class App {
 		//System.out.println(gerRotas.buscarPorOrigem(a2));
 
 
-		//Voo v1 = new Voo(r2, LocalDateTime.of(2016, 8, 10, 8, 0), Duration.ofMinutes(90));
-		//Voo v2 = new Voo(r5, LocalDateTime.of(2016, 8, 10, 15, 0) , Duration.ofMinutes(120));
-		//Voo v3 = new Voo(r6, LocalDateTime.of(2016, 8, 15, 12, 0) , Duration.ofMinutes(120));
+		//VooEscalas v1 = new VooEscalas(r2, LocalDateTime.of(2016, 8, 10, 8, 0), Duration.ofMinutes(90));
+		//VooEscalas v2 = new VooEscalas(r5, LocalDateTime.of(2016, 8, 10, 15, 0) , Duration.ofMinutes(120));
+		//VooEscalas v3 = new VooEscalas(r6, LocalDateTime.of(2016, 8, 15, 12, 0) , Duration.ofMinutes(120));
 		//GerenciadorVoos gerVoos = GerenciadorVoos.getInstance();
 		//gerVoos.adicionar(v1);
 		//gerVoos.adicionar(v2);
 		//gerVoos.adicionar(v3);
 		//v1.setStatus(Status.ATRASADO);
 		//v3.setStatus(Status.CANCELADO);
+
+		VooEscalas v1 = new VooEscalas(LocalDateTime.of(2016, 8, 10, 8, 0));
+		v1.adicionarRotas(r1);
+		v1.adicionarRotas(r2);
+		System.out.println(v1.getRotas());
+		System.out.println(v1.getDuracao());
+		//System.out.println(v1.getRotas());
+
 
 		//System.out.printf("Distancia: %.4f", Geo.distancia(a1.getLocal(), a2.getLocal()));
 		//av1.contar();

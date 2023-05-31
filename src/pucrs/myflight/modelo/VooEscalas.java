@@ -11,7 +11,7 @@ public class VooEscalas extends Voo {
 
     private ArrayList<Rota> escalas;
 
-    private VooEscalas(LocalDateTime dh) {
+    public VooEscalas(LocalDateTime dh) {
         super(dh);
         escalas = new ArrayList<>();
     }
@@ -22,18 +22,21 @@ public class VooEscalas extends Voo {
 
     @Override
     public Rota getRota() {
-        return rota;
+        for (Rota rota : escalas) {
+            return rota;
+        }
+        return null;
     }
 
     @Override
-    public Duration getDuracao() {
+    public String getDuracao() {
         double distancia = 0;
         for(Rota rota : escalas) {
-            distancia = rota.getDestino().getLocal().distancia(rota.getOrigem().getLocal());
-            distancia = (distancia / 805) + 0.5;
+            distancia += rota.getDestino().getLocal().distancia(rota.getOrigem().getLocal());
         }
+        distancia = ((distancia / 805) + (escalas.size() * 0.5));
         duracao = Duration.ofHours((long)(distancia));
-        return duracao;
+        return String.format("Duracao da viagem aproximada: %02d:%02d:%02d%n", duracao.toHours(), duracao.toMinutesPart(), duracao.toSecondsPart());
     }
 
     public ArrayList<Rota> getRotas() {
