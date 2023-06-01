@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class VooEscalas extends Voo {
 
-    private Rota rota;
     private Duration duracao;
 
     private ArrayList<Rota> escalas;
