@@ -7,6 +7,7 @@ import pucrs.myflight.modelo.Geo;
 import pucrs.myflight.modelo.GerenciadorAeronaves;
 import pucrs.myflight.modelo.GerenciadorAeroportos;
 import pucrs.myflight.modelo.GerenciadorCias;
+import pucrs.myflight.modelo.GerenciadorPaises;
 import pucrs.myflight.modelo.GerenciadorRotas;
 import pucrs.myflight.modelo.GerenciadorVoos;
 import pucrs.myflight.modelo.Rota;
@@ -21,6 +22,7 @@ public class App {
 	public static void main(String[] args) {
 		//System.out.println("\nMyFlight project...");
 
+		/*
 		Aeronave av1 = new Aeronave("733", "Boeing 737-300", 140);
 		Aeronave av2 = new Aeronave("73G", "Boeing 737-700", 126);
 		Aeronave av3 = new Aeronave("380", "Airbus Industrie A380", 644);
@@ -113,13 +115,26 @@ public class App {
 		//r1.contar();
 		//a1.contar();
 
+		*/
+		GerenciadorPaises gPaises =  GerenciadorPaises.getInstance();
+		GerenciadorCias gCias = GerenciadorCias.getInstance();
+		GerenciadorAeronaves gAeronaves = GerenciadorAeronaves.getInstance();
+		GerenciadorAeroportos gAeroportos = GerenciadorAeroportos.getInstance();
+		GerenciadorRotas gRotas = GerenciadorRotas.getInstance();
 
+		gPaises.carregaDadosPaises();
+		gCias.carregaDadosCias();
+		gAeronaves.carregaDadosAeronaves();
+		gAeroportos.carregaDadosAeroportos();
+		gRotas.carregaDadosRotas();
 
-
-
-
-
-
-
+		gAeronaves.ordenaDescricao();
+		System.out.println(gAeronaves.listarTodas());
+		System.out.println(gCias.listarTodas());
+		System.out.println(gPaises.listarTodos());
+		gAeroportos.ordenaNome();
+		System.out.println(gAeroportos.listarTodos());
+		gRotas.ordenaCias();
+		System.out.println(gRotas.listarTodas());
 	}
 }

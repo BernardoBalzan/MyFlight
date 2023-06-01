@@ -62,6 +62,9 @@ public class GerenciadorRotas {
                 String origem = dados[1];
                 String destino = dados[2];
                 String codCiaAerea = dados[0];
+                if (dados[5].length() > 3) {
+                    dados[5] = dados[5].substring(0, 3);
+                }
                 String codAeronave = dados[5];
                 Aeroporto aeroportoOrigem = GerenciadorAeroportos.getInstance().buscaPorCodigo(origem);
                 Aeroporto aeroportoDestino = GerenciadorAeroportos.getInstance().buscaPorCodigo(destino);

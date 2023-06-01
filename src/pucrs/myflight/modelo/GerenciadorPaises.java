@@ -27,7 +27,7 @@ public class GerenciadorPaises {
         paises.add(pais);
     }
 
-    public ArrayList<Pais> listarTodas() {
+    public ArrayList<Pais> listarTodos() {
 		return paises;
 	} 
 

@@ -19,6 +19,6 @@ public class Pais {
 
     @Override
     public String toString() {
-        return "Pais " + nome + " (" + codigo + ")\n";
+        return nome + " (" + codigo + ")\n";
     }
 }

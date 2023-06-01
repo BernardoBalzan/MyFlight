@@ -43,7 +43,7 @@ public class GerenciadorAeroportos {
         Collections.sort(aeroportos);
     }
 
-    public void carregaDadosPaises() {
+    public void carregaDadosAeroportos() {
         Path path1 = Paths.get("airports.dat");
         try (BufferedReader reader = Files.newBufferedReader(path1, Charset.forName("utf8"))) {
             String line = null;

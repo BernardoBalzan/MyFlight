@@ -33,7 +33,7 @@ public class Aeroporto implements Contavel, Comparable<Aeroporto> {
 
 	@Override
 	public String toString() {
-		return String.format("%s (%s) %s %s \n",nome, codigo, pais, loc);
+		return String.format("%s (%s), %s %s \n",nome, codigo, pais, loc);
 	}
 
 	public int compareTo(Aeroporto outro) {
